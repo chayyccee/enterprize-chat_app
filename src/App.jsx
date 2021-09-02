@@ -11,7 +11,7 @@ const client = StreamChat.getInstance(apiKey);
 
 function App() {
   return (
-    <div className="app_wrapper">
+    <div className="app__wrapper">
       <Chat client={client} theme="theme light">
         <ChannelListContainer />
         <ChannelContainer />
