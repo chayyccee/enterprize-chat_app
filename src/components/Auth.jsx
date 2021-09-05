@@ -5,6 +5,8 @@ import axios from "axios";
 //import image
 import signInImage from '../assets/signup.jpg';
 
+const cookies = new Cookies(); // create instance of cookies
+
 const initialState = {
     fullName: '',
     username: '',
@@ -18,16 +20,38 @@ const Auth = () => {
 
     const [form, setForm] = useState(initialState);
     const [isSignUp, setisSignUp] = useState(true);
+
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
-
-        console.log(form);
     };
-    const handleSubmit = (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log(form);
+        const { fullName, username, password, phoneNumber, avatarURL } = form; // destructure and get all the data from the form
+
+        const URL = 'http://localhost:5000/auth';
+
+        const { data : { token, userId, hashedPassword } } = await axios.post(`${URL}/${isSignUp ? 'signup' : 'login'}`, {
+            username, password, fullName, phoneNumber, avatarURL,
+        }); //make post request each time to the backend, depending on if user is signing up or logging in and retireve the token, userId and hashedPassword from the backend
+
+        //store data in browser cookies but don't use all 
+        cookies.set('token', token); // add token to browser cookies
+        cookies.set('username', username); // add username to browser cookies
+        cookies.set('avatarURL', avatarURL);
+        cookies.set('userId', userId);
+
+        if (isSignUp) {
+            cookies.set('phoneNumber', phoneNumber);
+            cookies.set('avatarURL', avatarURL);
+            cookies.set('hashedPassword', hashedPassword);
+        }
+
+        //reload browser so that the application will reload and this time, the authToken will be filled and go to the chat as a logged in user because the user will already have the authToken.
+        window.location.reload();
     };
+
     const switchMode = () => {
         setisSignUp((prevIsSignUp) => !prevIsSignUp); // used to change state depending on the pevious state
     };
