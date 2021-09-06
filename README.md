@@ -3,7 +3,7 @@ This applicationFull Stack Realtime Chat Messaging App with Authentication & SMS
 Also With Direct and Group Chats, emojis & Reactions, Built-in Gif support, the ability to edit & delete messages, specialized commands, and much more, this fully responsive Medical Pager
 
 ## Screenshot
-![Medical Pager Screenshot](/client/src/assets/screenshot.png?raw=true "Medical Pager")
+![Medical Pager Screenshot](/main/client/src/assets/screenshot.png?raw=true "Medical Pager")
 # Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
