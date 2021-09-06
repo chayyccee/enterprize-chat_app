@@ -4,3 +4,7 @@ export { default as ChannelSearch } from './ChannelSearch';
 export { default as TeamChannelList } from './TeamChannelList.jsx';
 export { default as TeamChannelPreview } from './TeamChannelList.jsx';
 export { default as Auth } from './Auth.jsx';
+export { default as EditChannel } from './EditChannel';
+export { default as TeamMessage } from './TeamMessage';
+export { default as ChannelInner } from './ChannelInner';
+export { default as CreateChannel } from './CreateChannel';
