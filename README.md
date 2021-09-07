@@ -1,6 +1,6 @@
 # About
 This application is a Full Stack Realtime Chat Messaging App with Authentication & SMS Notifications.
-Also With Direct and Group Chats, emojis & Reactions, Built-in Gif support, the ability to edit & delete messages, specialized commands, and much more, this fully responsive Medical Pager.
+Also With Direct and Group Chats, emojis & Reactions, Built-in Gif support, the ability to like, edit & delete messages, specialized commands, can reply messages in threads, and much more, this fully responsive Medical Pager.
 
 ## Screenshot
 ![Medical Pager Screenshot](https://github.com/chayyccee/enterprize-chat_app-client/blob/main/src/assets/screenshot.png "Medical Pager")
